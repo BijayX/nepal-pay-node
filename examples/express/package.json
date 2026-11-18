@@ -1,0 +1,15 @@
+{
+  "name": "nepal-pay-express-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env --experimental-strip-types src/server.ts"
+  },
+  "dependencies": {
+    "@bijayx/nepal-pay": "file:../..",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
+  }
+}

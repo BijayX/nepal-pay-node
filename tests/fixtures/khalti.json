@@ -1,0 +1,127 @@
+{
+  "initiateRequest": {
+    "amount": 110000,
+    "orderId": "ORD-1001-a1",
+    "orderName": "Charging session",
+    "returnUrl": "https://shop.test/pay/return",
+    "customer": {
+      "name": "Ram Bahadur",
+      "email": "ram@example.com",
+      "phone": "9800000001"
+    },
+    "metadata": {
+      "station": "ktm-01"
+    }
+  },
+  "initiateResponse": {
+    "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+    "payment_url": "https://test-pay.khalti.com/?pidx=bZQLD9wRVWo4CdESSfuSsB",
+    "expires_at": "2026-11-18T16:26:16.471649+05:45",
+    "expires_in": 1800
+  },
+  "validationError": {
+    "amount": ["Amount should be greater than Rs. 10, that is 1000 paisa."],
+    "error_key": "validation_error"
+  },
+  "invalidToken": {
+    "detail": "Invalid token.",
+    "status_code": 401
+  },
+  "callbackCompleted": {
+    "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+    "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
+    "tidx": "GFq9PFS7b2iYvL8Lir9oXe",
+    "amount": "110000",
+    "total_amount": "110000",
+    "mobile": "98XXXXX001",
+    "status": "Completed",
+    "purchase_order_id": "ORD-1001-a1",
+    "purchase_order_name": "Charging session"
+  },
+  "callbackCanceled": {
+    "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+    "transaction_id": "",
+    "tidx": "",
+    "amount": "110000",
+    "total_amount": "110000",
+    "mobile": "",
+    "status": "User canceled",
+    "purchase_order_id": "ORD-1001-a1",
+    "purchase_order_name": "Charging session"
+  },
+  "lookup": {
+    "completed": {
+      "httpStatus": 200,
+      "body": {
+        "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+        "total_amount": 110000,
+        "status": "Completed",
+        "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
+        "fee": 3300,
+        "refunded": false
+      }
+    },
+    "pending": {
+      "httpStatus": 200,
+      "body": {
+        "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+        "total_amount": 110000,
+        "status": "Pending",
+        "transaction_id": null,
+        "fee": 0,
+        "refunded": false
+      }
+    },
+    "initiated": {
+      "httpStatus": 200,
+      "body": {
+        "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+        "total_amount": 110000,
+        "status": "Initiated",
+        "transaction_id": null,
+        "fee": 0,
+        "refunded": false
+      }
+    },
+    "refunded": {
+      "httpStatus": 200,
+      "body": {
+        "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+        "total_amount": 110000,
+        "status": "Refunded",
+        "transaction_id": "GFq9PFS7b2iYvL8Lir9oXe",
+        "fee": 0,
+        "refunded": true
+      }
+    },
+    "expired": {
+      "httpStatus": 400,
+      "body": {
+        "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+        "total_amount": 110000,
+        "status": "Expired",
+        "transaction_id": null,
+        "fee": 0,
+        "refunded": false
+      }
+    },
+    "userCanceled": {
+      "httpStatus": 400,
+      "body": {
+        "pidx": "bZQLD9wRVWo4CdESSfuSsB",
+        "total_amount": 110000,
+        "status": "User canceled",
+        "transaction_id": null,
+        "fee": 0,
+        "refunded": false
+      }
+    },
+    "notFound": {
+      "httpStatus": 404,
+      "body": {
+        "detail": "Not found.",
+        "error_key": "validation_error"
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "secretKey": "8gBm/:&EnhH.1/q",
+  "productCode": "EPAYTEST",
+  "signatureVectors": [
+    {
+      "message": "total_amount=100,transaction_uuid=11-201-13,product_code=EPAYTEST",
+      "signature": "5DZywcrTKD0gia/rsSMcrRHmJl+4Tbol6S+lWgdJ94E="
+    },
+    {
+      "message": "total_amount=110,transaction_uuid=ab14a8f2b02c3,product_code=EPAYTEST",
+      "signature": "0Gh9pc1fiZDZH7OKOBdn42QMx8drH7tOeMPdRQhI83g="
+    },
+    {
+      "message": "total_amount=110.50,transaction_uuid=ORD-1001-a1,product_code=EPAYTEST",
+      "signature": "fWZXRw+fc7EJiSmHr1xVKe5ihFSfxS8ez2pKbuOiM4c="
+    }
+  ],
+  "initiate": {
+    "input": {
+      "amount": 110000,
+      "orderId": "ORD-1001-a1",
+      "orderName": "Charging session",
+      "returnUrl": "https://shop.test/pay/return",
+      "failureUrl": "https://shop.test/pay/failed",
+      "breakdown": {
+        "tax": 10000
+      }
+    },
+    "expectedFields": {
+      "amount": "1000",
+      "tax_amount": "100",
+      "total_amount": "1100",
+      "transaction_uuid": "ORD-1001-a1",
+      "product_code": "EPAYTEST",
+      "product_service_charge": "0",
+      "product_delivery_charge": "0",
+      "success_url": "https://shop.test/pay/return",
+      "failure_url": "https://shop.test/pay/failed",
+      "signed_field_names": "total_amount,transaction_uuid,product_code",
+      "signature": "5XncBW3mzQ9PDhkc/nywDVYOey4O2bbZSQVFAYlnQwA="
+    }
+  },
+  "callback": {
+    "decoded": {
+      "transaction_code": "000AE01",
+      "status": "COMPLETE",
+      "total_amount": "1,100.0",
+      "transaction_uuid": "ORD-1001-a1",
+      "product_code": "EPAYTEST",
+      "signed_field_names": "transaction_code,status,total_amount,transaction_uuid,product_code,signed_field_names",
+      "signature": "BFcZ2VdlQQ8rE7pq74HBzGh/q2C1Yg6tJ7rV+bFjWrg="
+    },
+    "data": "eyJ0cmFuc2FjdGlvbl9jb2RlIjoiMDAwQUUwMSIsInN0YXR1cyI6IkNPTVBMRVRFIiwidG90YWxfYW1vdW50IjoiMSwxMDAuMCIsInRyYW5zYWN0aW9uX3V1aWQiOiJPUkQtMTAwMS1hMSIsInByb2R1Y3RfY29kZSI6IkVQQVlURVNUIiwic2lnbmVkX2ZpZWxkX25hbWVzIjoidHJhbnNhY3Rpb25fY29kZSxzdGF0dXMsdG90YWxfYW1vdW50LHRyYW5zYWN0aW9uX3V1aWQscHJvZHVjdF9jb2RlLHNpZ25lZF9maWVsZF9uYW1lcyIsInNpZ25hdHVyZSI6IkJGY1oyVmRsUVE4ckU3cHE3NEhCekdoL3EyQzFZZzZ0SjdyVitiRmpXcmc9In0="
+  },
+  "tamperedCallback": {
+    "data": "eyJ0cmFuc2FjdGlvbl9jb2RlIjoiMDAwQUUwMSIsInN0YXR1cyI6IkNPTVBMRVRFIiwidG90YWxfYW1vdW50IjoiMS4wIiwidHJhbnNhY3Rpb25fdXVpZCI6Ik9SRC0xMDAxLWExIiwicHJvZHVjdF9jb2RlIjoiRVBBWVRFU1QiLCJzaWduZWRfZmllbGRfbmFtZXMiOiJ0cmFuc2FjdGlvbl9jb2RlLHN0YXR1cyx0b3RhbF9hbW91bnQsdHJhbnNhY3Rpb25fdXVpZCxwcm9kdWN0X2NvZGUsc2lnbmVkX2ZpZWxkX25hbWVzIiwic2lnbmF0dXJlIjoiQkZjWjJWZGxRUThyRTdwcTc0SEJ6R2gvcTJDMVlnNnRKN3JWK2JGaldyZz0ifQ=="
+  },
+  "statusResponses": {
+    "COMPLETE": {
+      "product_code": "EPAYTEST",
+      "transaction_uuid": "ORD-1001-a1",
+      "total_amount": 1100,
+      "status": "COMPLETE",
+      "ref_id": "000AE01"
+    },
+    "PENDING": {
+      "product_code": "EPAYTEST",
+      "transaction_uuid": "ORD-1001-a1",
+      "total_amount": 1100,
+      "status": "PENDING",
+      "ref_id": null
+    },
+    "NOT_FOUND": {
+      "product_code": "EPAYTEST",
+      "transaction_uuid": "ORD-1001-a1",
+      "total_amount": 1100,
+      "status": "NOT_FOUND",
+      "ref_id": null
+    },
+    "CANCELED": {
+      "product_code": "EPAYTEST",
+      "transaction_uuid": "ORD-1001-a1",
+      "total_amount": 1100,
+      "status": "CANCELED",
+      "ref_id": "000AE01"
+    },
+    "serviceUnavailable": {
+      "code": 0,
+      "error_message": "Service is currently unavailable"
+    }
+  }
+}
