@@ -1,6 +1,6 @@
 {
   "name": "@bijayx/nepal-pay",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Type-safe Khalti and eSewa payment gateway SDK for Node.js — one API, server-side verification, typed errors.",
   "keywords": [
     "khalti",
