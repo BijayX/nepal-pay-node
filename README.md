@@ -1,5 +1,11 @@
 # @bijayx/nepal-pay
 
+[![npm version](https://img.shields.io/npm/v/@bijayx/nepal-pay.svg)](https://www.npmjs.com/package/@bijayx/nepal-pay)
+[![npm downloads](https://img.shields.io/npm/dm/@bijayx/nepal-pay.svg)](https://www.npmjs.com/package/@bijayx/nepal-pay)
+[![CI](https://github.com/BijayX/nepal-pay-node/actions/workflows/ci.yml/badge.svg)](https://github.com/BijayX/nepal-pay-node/actions/workflows/ci.yml)
+[![Node.js](https://img.shields.io/node/v/@bijayx/nepal-pay.svg)](https://www.npmjs.com/package/@bijayx/nepal-pay)
+[![License: MIT](https://img.shields.io/npm/l/@bijayx/nepal-pay.svg)](LICENSE)
+
 Khalti and eSewa payments for Node.js, behind one typed API.
 
 - **One interface** for both gateways: `initiate()`, `verify()`, `lookup()`.
